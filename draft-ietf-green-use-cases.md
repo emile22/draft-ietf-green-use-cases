@@ -1,7 +1,7 @@
 ---
 title: "Use Cases for Energy Efficiency Management"
 abbrev: "Use Cases for Energy Efficiency"
-docname: draft-stephan-green-use-cases-latest
+docname: draft-ietf-green-use-cases-latest
 category: info
 stand_alone: true
 
@@ -18,7 +18,7 @@ venue:
   mail: "green@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/green/"
   github: "emile22/draft-stephan-green-use-cases"
-  latest: "https://emile22.github.io/draft-stephan-green-use-cases/draft-stephan-green-use-cases.html"
+  latest: "https://emile22.github.io/draft-stephan-green-use-cases/draft-ietf-green-use-cases.html"
 
 v: 3
 
@@ -52,21 +52,6 @@ author:
 normative:
 
 informative:
-
-  operators-inputs:
-    title: "Input from Operators to GREEN BoF"
-    date: 2024-07-20
-    target: "https://datatracker.ietf.org/meeting/120/materials/slides-120-green-input-from-operators-to-green-bof-01"
-
-  GREEN-BOF:
-    title: "BOF proposal for GREEN WG Creation"
-    date: 2024-05-10
-    target: "https://github.com/marisolpalmero/GREEN-bof"
-
-  sustainability-insights:
-    title: "Sustainability Insights"
-    date: 2024-05-07
-    target: "https://datatracker.ietf.org/doc/html/draft-almprs-sustainability-insights"
 
   legacy-path:
     title: "Requirements for Energy Efficiency Management"
@@ -130,7 +115,7 @@ Legacy routers, equipped with traditional Ethernet ports and optical interfaces 
 
 Two directions are considered:
 
-- Improving energy efficiency of legacy devices through targeted upgrades—such as replacing line cards, optimizing firmware behavior, or reconfiguring interface usage based on operational demand.
+- Improving energy efficiency of legacy devices through targeted upgrades such as replacing line cards, optimizing firmware behavior, or reconfiguring interface usage based on operational demand.
 
 - Including legacy devices in early phases of energy-aware system deployment, ensuring that improvements are not limited only to new hardware generations.
 
@@ -175,7 +160,7 @@ Ensures that energy efficiency can be deployed, operated and measured per compon
 Traffic levels in a network follow patterns reflecting the behavior of consumers. Those patterns show periodicity in the terms of the traffic delivered, that can range from daily (from 00:00 to 23:59) to seasonal (e.g., winter to summer), showing peaks and valleys that could be exploited to reduce the consumption of energy in the network proportionally, in case the underlying network elements incorporate such capabilities. The reduction of energy consumption could be performed by leveraging on sleep modes in components up to more extreme actions such as switching off network components or modules. Such decisions are expected to no impact on the service delivered to customers, and could be accompanied by traffic relocation and / or concentration in the network.
 
 ### GREEN WG Charter Specifics
-This use case fits within the GREEN WG’s objectives by emphasizing energy-aware operational adjustments across network infrastructure that optimize energy use based on traffic loads and the intelligent activation/deactivation of resources.
+This use case fits within the GREEN WG's objectives by emphasizing energy-aware operational adjustments across network infrastructure that optimize energy use based on traffic loads and the intelligent activation/deactivation of resources.
 
 ### The Need for Energy Efficiency
 Reducing energy usage during during low-demand periods can lower operational costs and carbon emissions while also prolonging equipment lifespan.
@@ -340,16 +325,24 @@ Reducing redundant unicast traffic and improving caching strategies reduces back
 ## WLAN Network Energy Saving
 
 ### Use Case Description
-In a WLAN network, The AP is usually powered by a PoE switch.
-AP nodes are network devices with the largest number and consuming most of energy. Therefore, the working status of the AP is the core of the energy saving solution.
+In a WLAN network, Access Points(APs) are typically powered by Power over Ethernet (PoE) switches and represent a substantial portion of the energy consumed by edge network devices due to their high density and round-the-clock operation.
 
+This use case introduces a multi-mode approach for AP energy saving:
 The working status of the AP can be break down into 3 modes as follows:
    PoE power-off mode: In this mode, the PoE switch shuts down the port and stops supplying power to the AP. The AP does not consume power at all. When the AP
    wakes up, the port provides power again. In this mode, it usually takes a few minutes for the AP to recover.
    Hibernation mode: Only low power consumption is used to protect key hardware such as the CPU, and other components are shut down.
    Low power consumption mode: Compared with the hibernation mode, the low power consumption mode maintains a certain communication capability. For example, the AP retains only the 2.4 GHz band and disables other radio bands.
 
-In energy saving deployment, after the surrounding energy saving APs are shut down, the Working AP automatically adjusts their transmit power to increase the coverage of the entire area at specific energy saving period. In such case, energy saving APs can freely choose to switch to any mode we described above.
+* PoE Power-Off Mode: The PoE switch disables the port, completely cutting power to the AP. No energy is consumed, though recovery takes several minutes when power is restored.
+
+* Hibernation Mode: The AP powers down most components, preserving minimal CPU functionality to allow faster reactivation.
+
+* Low Power Mode: The AP disables some radios (e.g., 5GHz), retaining minimal operation (e.g., 2.4GHz) for reduced but persistent service.
+
+To maintain coverage and service quality, surrounding APs dynamically adjust their transmit power when some APs enter energy-saving states. Energy-saving schedules may be time-based (e.g., during off-hours) or traffic-aware (low utilization periods).
+
+Grouping APs by location enables coordinated energy-saving plans, minimizing disruption while maximizing cumulative energy reduction.
 
 
 ~~~~
@@ -409,6 +402,39 @@ In energy saving deployment, after the surrounding energy saving APs are shut do
 {: #wireless-resource-management title="Wireless Resource Management on APs"}
 
 ### GREEN WG Charter Specifics
+
+This use case aligns with the GREEN WG’s charter by:
+
+- Illustrating real-world scenarios where energy efficiency mechanisms (discovery, monitoring, control) apply to IP-managed devices.
+
+- Providing a localized but scalable use case that fits into broader energy-aware network management frameworks.
+
+-Addressing interoperability and observability across energy states and reporting mechanisms, including energy mix awareness.
+
+### The Need for Energy Efficiency
+
+Given the number of deployed APs in enterprise and campus networks, their continuous operation contributes significantly to energy consumption. Many of these environments experience well-defined periods of inactivity (e.g., nighttime, weekends), during which full AP operation is unnecessary.
+
+Reducing AP energy consumption during these periods, while maintaining sufficient coverage and quality of service, presents an effective opportunity for energy savings. Applying coordinated power-state transitions across AP groups enables measurable improvements with minimal operational impact.
+
+
+### Requirements for GREEN WG
+
+To support WLAN Network Energy Saving, the GREEN WG should consider:
+
+- Defining power state transition models and standard energy mode nomenclature for APs (e.g., OFF, HIBERNATE, LOW-POWER, ACTIVE).
+
+- Specifying APIs or YANG models for monitoring and controlling AP power modes via PoE switches or WLAN controllers.
+
+- Enabling reporting of per-mode energy consumption, transitions over time, and cumulative energy savings.
+
+- Ensuring support for scheduled and dynamic (traffic-aware) control policies.
+
+- Allowing integration with broader network monitoring frameworks for energy efficiency analysis at the local and network-wide level.
+
+- Considering implications for resiliency, coverage trade-offs, and restart delays in power-off scenarios.
+
+
 Enable measuring and reporting of energy usage through metrics and attributes and allow operators to optimize energy usage.
 
 ### The Need for Energy Efficiency
@@ -422,7 +448,15 @@ AP nodes as network devices with the largest number consume large amount of ener
 ## Fixed Network Energy Saving
 
 ### Use Case Description
-In many fixed networks, particularly those at metro or backbone level, traffic patterns follow a predictable tidal cycle - with clearly defined high-traffic and low-traffic periods. These fluctuations provide opportunities for dynamic energy-saving mechanisms. During low-traffic periods, certain network components can be deactivated or put into sleep mode. Additionally, routers equipped with interfaces of varying speeds (e.g., from 1G to 400G) can dynamically adjust interface speeds, deactivate unused ports, or scale down internal resources such as processor cores, chipset clock frequencies, or SerDes lanes, depending on traffic demand.
+In many fixed networks, particularly those at metro or backbone level, traffic patterns follow a predictable tidal cycle - with clearly defined high-traffic and low-
+traffic periods. These fluctuations provide opportunities for dynamic energy-saving mechanisms. During low-traffic periods, certain network components can be deactivated
+or put into sleep mode. Additionally, routers equipped with interfaces of varying speeds (e.g., from 1G to 400G) can dynamically adjust interface speeds, deactivate
+unused ports, or scale down internal resources such as processor cores, chipset clock frequencies, or SerDes lanes, depending on traffic demand.
+
+In many fixed networks, particularly those at metro or backbone level, traffic patterns may follow a predictable tidal cycle
+- with clearly defined high-traffic and low-traffic periods, or may follow unbalanced traffic load
+- with clearly identified high-load and idle network elements.
+These fluctuations provide opportunities for dynamic energy-saving mechanisms. During low-traffic periods or unbalanced traffic load periods, the low traffic could be migrated and aggregated, certain network components can be deactivated or put into sleep mode.  Additionally, routers equipped with interfaces of varying speeds (e.g., from 1G to 400G) can periods dynamically adjust interface speeds, deactivate unused ports, or scale down internal resources such as processor cores, chipset clock frequencies, or SerDes lanes, depending on traffic demand.
 
 ### GREEN WG Charter Specifics
 
@@ -438,6 +472,7 @@ Network devices at metro or backbone network consume large amount of energy.
 ### Requirements for GREEN WG
 
 - Standardized definitions and telemetry models for identifying tidal traffic patterns and low-utilization windows.
+- Standardized AI/ML models for traffic prediction using historical data, capturing both long-term regularities and short-term bursts.
 - Protocol support for energy-aware dynamic reconfiguration (e.g., speed adjustment, core deactivation).
 - Trade-offs between energy savings and network latency/performance.
 - Mechanisms to synchronize energy-saving decisions across multiple devices (e.g., coordinated interface downshifts).
@@ -502,6 +537,8 @@ autonomous vehicles or traffic lights.  By using ISAC, the system
 minimizes redundant infrastructure (e.g., separate sensors and
 communication equipment), thus reducing the overall carbon and energy
 footprint.
+
+On the other hand, such an infrastructure will have to adapt its energy optimization policies to sensing applications: critical functions (e.g., threat detection) must run continuously, while others should activate depending on the context.
 
 ### GREEN WG Specifics
 
@@ -574,7 +611,7 @@ The monitoring must not count twice the power that passthru devices and componen
 ### Use case description
 
 This use case focuses on network devices (e.g., routers, switches, access points) that must maintain essential connectivity during power shortages.
-Telecom locations use different power backups levels (as example battery, standby generator ...). Devices may have access to one or more backup power sources such as onboard batteries, PoE fallback, or centralized UPS systems. When a power shortage occurs, the network device transitions from grid power to available backup sources and must prioritize operational resilience over typical energy optimization strategies. Unlike behavior in a normally powered state, the focus here is not on minimizing energy consumption per se, but on sustaining essential operation with limited energy and prepare to worse situations and more constrained powered state fallbacks. These behaviors increase the device’s ability to operate longer under backup power, ensuring availability of essential services during outages.
+Telecom locations use different power backups levels (as example battery, standby generator ...). Devices may have access to one or more backup power sources such as onboard batteries, PoE fallback, or centralized UPS systems. When a power shortage occurs, the network device transitions from grid power to available backup sources and must prioritize operational resilience over typical energy optimization strategies. Unlike behavior in a normally powered state, the focus here is not on minimizing energy consumption per se, but on sustaining essential operation with limited energy and prepare to worse situations and more constrained powered state fallbacks. These behaviors increase the device's ability to operate longer under backup power, ensuring availability of essential services during outages.
 
 Data networks and grid networks resiliency are closely interleaved during power shortage. It is a race between the speed of the operations to restore the grid network and the availability of mobile connectivity for power grid repair teams because of the impairment of operational visibility and response coordination.
 
@@ -593,6 +630,47 @@ Energy efficiency under power shortage conditions is fundamentally different fro
 ### Requirements for GREEN WG
 - Awareness of backup systems (e.g., batteries, generators).
 - Awareness of hierarchical fallback to more constrained powered state.
+
+## Energy-Efficient Management of Distributed AI Training Workloads
+
+### Use Case Description
+Training large AI models requires distributed computing across multiple servers or GPUs. This distributed training generates significant East-West traffic as data is exchanged between nodes. This use case focuses on managing the energy consumption of distributed AI training workloads by optimizing data placement, communication patterns, and compute resource allocation. Strategies include scheduling training jobs to run during periods of lower energy prices, using compression techniques to reduce data transfer volume, and dynamically adjusting the number of active nodes based on training progress. It is also critical to have a cross-domain view of the end to end flow to address power consumption holistically.
+
+### GREEN WG Charter Specifics
+This use case contributes to the GREEN WG's goals by addressing the energy efficiency of emerging workloads and exploring the use of dynamic resource allocation to minimize energy consumption. It calls for energy-aware scheduling and optimization techniques.
+
+### The Need for Energy Efficiency
+AI training is a computationally intensive task that consumes a significant amount of energy. Optimizing the energy efficiency of distributed AI training workloads can reduce costs, improve sustainability, and enable more widespread adoption of AI technologies. There is an impact not only for the network consumption, rather than the compute consumption.
+
+### Requirements for GREEN WG
+- East-West Traffic Monitoring: Standardized mechanisms for monitoring the volume, type, and characteristics of East-West traffic.
+- Workload Characterization: Standardized methods for characterizing the energy consumption profile of AI training workloads.
+- Energy-Aware Scheduling: APIs for scheduling training jobs based on energy prices, grid conditions, and other energy-related factors.
+- Data Compression and Optimization: Techniques for reducing the volume of data transferred during distributed training.
+- Dynamic Resource Allocation: Mechanisms for dynamically adjusting the number of active nodes based on training progress and energy availability.
+- Resource co-location, so the data used for processing can be as close as possible to the data crunching machines.
+
+## Network-level Cross Layer Energy Saving
+
+### Use Case Description
+For the carrier of integrated services (e.g., TDM/IP) using physical infrastructures like optical fiber and optical wavelengths, the transport network functions as the
+underlay to the IP network as the overlay. Here the transport network is designed for guaranteed connectivity, with relatively rigid resource allocation while the IP
+network supports flexible traffic on runtime. the technology difference creates the challenge of "dynamic traffic vs. static infrastructure".
+In the section 2.10, fixed network energy saving use case describes that during low-traffic periods or unbalanced traffic load periods, certain network components can be
+deactivated or put into sleep mode. Imagine when an IP line card is shutdown, it not only affects the link in the overlying IP layer (L3) but also the link in the
+transport layer (L0/L1/L2), network-level cross-layer energy saving management can enable a holistic optimization of resources across layers while ensuring the overall
+service QoS. This allows some resources across layers to enter a sleep or lower-power state, thereby reducing overall energy consumption.
+
+### GREEN WG Charter Specifics
+- Multi-layer energy management: This use case highlights the interaction between the transport network underlay (L0-L2) and the IP overlay (L3). The GREEN WG can define
+  how energy-saving actions are safely coordinated across layers to maintain service continuity, which is a critical aspect of cross-layer optimization.
+
+### The Need for Energy Efficiency
+When talking about network-level energy saving, It's inevitable to face the challenge of "dynamic traffic vs. static infrastructure" and deal with different network
+layers.
+
+### Requirements for GREEN WG
+- Mechanisms to coordinate energy-saving decisions across multiple layers(e.g., coordination between IP layer and Transport layer).
 
 # Security Considerations
 
@@ -657,46 +735,17 @@ Energy Metric in E2E view
               Part 22: Static meters for active energy (classes 0,2 S
               and 0,5 S)", January 2003.
 
-   [IEEE-100] IEEE, "The Authoritative Dictionary of IEEE Standards
-              Terms, IEEE 100, Seventh Edition", December 2000.
-
-   [IEEE-1621]
-              Institute of Electrical and Electronics Engineers,
-              "IEEE 1621-2004 - IEEE Standard for User Interface
-              Elements in Power Control of Electronic Devices Employed
-              in Office/Consumer Environments", 2004.
-
-
    [ATIS-0600015.03.2013]
               ATIS, "ATIS-0600015.03.2013: Energy Efficiency for
               Telecommunication Equipment: Methodology for Measurement
               and Reporting for Router and Ethernet Switch Products",
               2013.
 
-   [ETSI-ES-203-136]
-              ETSI, "ETSI ES 203 136: Environmental Engineering (EE);
-              Measurement methods for energy efficiency of router and
-              switch equipment", 2017, <https://www.etsi.org/deliver/
-              etsi_es/203100_203199/203136/01.02.00_50/
-              es_203136v010200m.pdf>.
-
-   [ITUT-L.1310]
-              ITU-T, "L.1310 : Energy efficiency metrics and measurement
-              methods for telecommunication equipment", 2020,
-              <https://www.itu.int/rec/T-REC-L.1310/en>.
-
 ## Informative References
 
    [IEC.60050] International Electrotechnical Commission, "Electropedia:
    The World's Online Electrotechnical Vocabulary", 2013,
    <http://www.electropedia.org/iev/iev.nsf/welcome?openform>.
-
-   [ITU-M.3400] International Telecommunication Union, "ITU-T
-   Recommendation M.3400 -- Series M: TMN and Network Maintenance:
-   International Transmission Systems, Telephone Circuits, Telegraphy,
-   Facsimile and Leased Circuits -- Telecommunications Management
-   Network - TMN management functions", February 2000.
-
 
 # Appendix I: Template preparation
 
@@ -721,7 +770,7 @@ Examples (can be split into different categories to facilitate a summary at the 
 
 - Granularity of measurements should be per component, per line, per port.
 
-- Ability to switch on/off, put on sleep mode… components.
+- Ability to switch on/off, put on sleep mode' components.
 
 - Ability to reconfigure hardware mode based on power savings (e.g., reduce reliability or speed).
 
