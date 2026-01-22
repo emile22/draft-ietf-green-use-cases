@@ -4,8 +4,8 @@ This is the working area for the individual Internet-Draft, "draft-ietf-green-us
 
 * [Editor's Copy](https://emile22.github.io/draft-ietf-green-use-cases/#go.draft-ietf-green-use-cases.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-green-use-cases)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-ietf-green-use-cases)
-* [Compare Editor's Copy to Individual Draft](https://emile22.github.io/draft-ietf-green-use-cases/#go.draft-ietf-green-use-cases.diff)
+* [current WG Draft](https://datatracker.ietf.org/doc/html/draft-ietf-green-use-cases)
+* [Compare Editor's Copy to current WG Draft](https://emile22.github.io/draft-ietf-green-use-cases/#go.draft-ietf-green-use-cases.diff)
 
 
 ## Contributing
