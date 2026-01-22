@@ -5,7 +5,7 @@
 Getting Ready for Energy-Efficient Networking                 E. Stephan
 Internet-Draft                                                    Orange
 Intended status: Informational                                M. Palmero
-Expires: 25 July 2026                                         Individual
+Expires: 26 July 2026                                         Individual
                                                                B. Claise
                                                                    Q. Wu
                                                                   Huawei
@@ -13,7 +13,7 @@ Expires: 25 July 2026                                         Individual
                                                               Telefonica
                                                          C. J. Bernardos
                                         Universidad Carlos III de Madrid
-                                                         21 January 2026
+                                                         22 January 2026
 
 
                Use Cases for Energy Efficiency Management
@@ -63,7 +63,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 July 2026.
+   This Internet-Draft will expire on 26 July 2026.
 
 Copyright Notice
 
