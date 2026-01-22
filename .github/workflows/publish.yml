@@ -16,8 +16,9 @@ jobs:
     name: "Publish New Draft Version"
     runs-on: ubuntu-latest
     steps:
+    # old was: uses: actions/checkout@v4
     - name: "Checkout"
-      uses: actions/checkout@v4
+      uses: actions/checkout@latest
 
     # See https://github.com/actions/checkout/issues/290
     - name: "Get Tag Annotations"
