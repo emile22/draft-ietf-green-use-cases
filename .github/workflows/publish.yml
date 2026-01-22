@@ -18,7 +18,7 @@ jobs:
     steps:
     # old was: uses: actions/checkout@v4
     - name: "Checkout"
-      uses: actions/checkout@latest
+      uses: actions/checkout@v4
 
     # See https://github.com/actions/checkout/issues/290
     - name: "Get Tag Annotations"
