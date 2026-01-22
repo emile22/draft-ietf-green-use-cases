@@ -48,6 +48,10 @@ author:
     fullname: Carlos J. Bernardos
     org: Universidad Carlos III de Madrid
     email: cjbc@it.uc3m.es
+  -
+    fullname: Xinyu Chen
+    org: China Mobile
+    email: chenxinyu@chinamobile.com
 
 normative:
 
