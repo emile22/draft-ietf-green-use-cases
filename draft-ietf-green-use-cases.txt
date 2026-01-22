@@ -13,6 +13,8 @@ Expires: 26 July 2026                                         Individual
                                                               Telefonica
                                                          C. J. Bernardos
                                         Universidad Carlos III de Madrid
+                                                                 X. Chen
+                                                            China Mobile
                                                          22 January 2026
 
 
@@ -1567,3 +1569,8 @@ Authors' Addresses
    Carlos J. Bernardos
    Universidad Carlos III de Madrid
    Email: cjbc@it.uc3m.es
+
+
+   Xinyu Chen
+   China Mobile
+   Email: chenxinyu@chinamobile.com
