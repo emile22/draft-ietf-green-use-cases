@@ -17,8 +17,8 @@ venue:
   type: "Working Group"
   mail: "green@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/green/"
-  github: "emile22/draft-stephan-green-use-cases"
-  latest: "https://emile22.github.io/draft-stephan-green-use-cases/draft-ietf-green-use-cases.html"
+  github: "emile22/draft-ietf-green-use-cases"
+  latest: "https://emile22.github.io/draft-ietf-green-use-cases/draft-ietf-green-use-cases.html"
 
 v: 3
 
@@ -88,7 +88,7 @@ This document groups use cases for Energy efficiency Management of network devic
 
 Discussion Venues
 
-Source of this draft and an issue tracker can be found at https://github.com/emile22/draft-stephan-green-use-cases
+Source of this draft and an issue tracker can be found at https://github.com/emile22/draft-ietf-green-use-cases
 
 --- middle
 
@@ -407,7 +407,7 @@ Grouping APs by location enables coordinated energy-saving plans, minimizing dis
 
 ### GREEN WG Charter Specifics
 
-This use case aligns with the GREEN WG’s charter by:
+This use case aligns with the GREEN WG's charter by:
 
 - Illustrating real-world scenarios where energy efficiency mechanisms (discovery, monitoring, control) apply to IP-managed devices.
 
@@ -559,8 +559,7 @@ routes or nodes that consume less power, leveraging energy-efficient
 communication protocols.
 
 Integration of Local and Global Energy Goals: The system can operate
-both locally (e.g., turning off specific roadside units in low-
-traffic areas) and globally (e.g., modifying traffic patterns across
+both locally (e.g., turning off specific roadside units in low-traffic areas) and globally (e.g., modifying traffic patterns across
 the city) to achieve defined energy consumption goals.
 
 ### Requirements for GREEN WG
