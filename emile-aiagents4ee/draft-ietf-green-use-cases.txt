@@ -5,7 +5,7 @@
 Getting Ready for Energy-Efficient Networking                 E. Stephan
 Internet-Draft                                                    Orange
 Intended status: Informational                                M. Palmero
-Expires: 26 July 2026                                         Individual
+Expires: 4 February 2027                                      Individual
                                                                B. Claise
                                                                    Q. Wu
                                                                   Huawei
@@ -15,7 +15,7 @@ Expires: 26 July 2026                                         Individual
                                         Universidad Carlos III de Madrid
                                                                  X. Chen
                                                             China Mobile
-                                                         22 January 2026
+                                                           3 August 2026
 
 
                Use Cases for Energy Efficiency Management
@@ -29,14 +29,14 @@ Abstract
    Discussion Venues
 
    Source of this draft and an issue tracker can be found at
-   https://github.com/emile22/draft-stephan-green-use-cases
+   https://github.com/emile22/draft-ietf-green-use-cases
 
 About This Document
 
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://emile22.github.io/draft-stephan-green-use-cases/draft-ietf-
+   https://emile22.github.io/draft-ietf-green-use-cases/draft-ietf-
    green-use-cases.html.  Status information for this document may be
    found at https://datatracker.ietf.org/doc/draft-ietf-green-use-
    cases/.
@@ -48,7 +48,7 @@ About This Document
    https://www.ietf.org/mailman/listinfo/green/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/emile22/draft-stephan-green-use-cases.
+   https://github.com/emile22/draft-ietf-green-use-cases.
 
 Status of This Memo
 
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 July 2026.
+   This Internet-Draft will expire on 4 February 2027.
 
 Copyright Notice
 
@@ -173,6 +173,11 @@ Table of Contents
        2.16.2.  GREEN WG Charter Specifics
        2.16.3.  The Need for Energy Efficiency
        2.16.4.  Requirements for GREEN WG
+     2.17. AI Agents for Energy Efficiency Management
+       2.17.1.  Use Case Description
+       2.17.2.  GREEN WG Charter Specifics
+       2.17.3.  The Need for Energy Efficiency
+       2.17.4.  Requirements for GREEN WG
    3.  Security Considerations
    4.  IANA Considerations
    5.  Acknowledgments
@@ -711,7 +716,7 @@ Table of Contents
 
 2.9.2.  GREEN WG Charter Specifics
 
-   This use case aligns with the GREEN WG’s charter by:
+   This use case aligns with the GREEN WG's charter by:
 
    *  Illustrating real-world scenarios where energy efficiency
       mechanisms (discovery, monitoring, control) apply to IP-managed
@@ -1180,6 +1185,63 @@ Table of Contents
 
    *  Mechanisms to coordinate energy-saving decisions across multiple
       layers(e.g., coordination between IP layer and Transport layer).
+
+2.17.  AI Agents for Energy Efficiency Management
+
+2.17.1.  Use Case Description
+
+   AI agents can be deployed at different levels of the management
+   architecture, for example within network controllers, to implement
+   energy-saving actions across network devices.  By adding AI
+   capabilities to the management architecture, operators can achieve
+   more sophisticated and automated energy optimization.
+
+   An AI agent continuously monitors energy consumption patterns in
+   conjunction with operations data to identify optimization
+   opportunities.  Based on this analysis, the AI agent can implement
+   coordinated energy-saving actions while maintaining required service
+   levels.  Over time, AI agents learn from operational data to improve
+   energy optimization requested.
+
+   This approach builds upon incremental deployment capabilities where
+   energy efficiency measures are gradually implemented.  It provides
+   the agent with the knowledge to optimize decisions based on wider
+   data rather than relying on individual device capabilities.
+
+2.17.2.  GREEN WG Charter Specifics
+
+   The AI agent can coordinate energy-saving actions across multiple
+   devices while optimizing service quality and energy efficiency.  AI
+   agents may operate at different levels within the management
+   architecture rather than requiring changes to individual network
+   devices.
+
+2.17.3.  The Need for Energy Efficiency
+
+   Adding AI capabilities to the network management architecture offers
+   significant potential for improving energy efficiency.  An AI agent
+   can have visibility across the entire network, allowing it to make
+   optimization decisions based on data patterns.  It can analyze energy
+   consumption patterns in conjunction with traffic loads and network
+   performance to identify the most effective energy-saving operation.
+
+   An AI agent can implement coordinated energy-saving actions across
+   multiple devices while maintaining required service levels.  It can
+   adapt to changing network conditions and traffic patterns.  It learns
+   from operational experience to improve its operations over time.
+
+   This approach supports the incremental deployment of energy-efficient
+   practices across the network.  The AI agent can make more
+   sophisticated decisions based on network-wide data rather than
+   relying solely on individual device capabilities.
+
+2.17.4.  Requirements for GREEN WG
+
+   The implementation of this use case relies on energy management
+   capabilities.  The AI agent should utilize standardized interfaces
+   for consistent energy management across different devices.  Energy
+   optimization decisions should respect established power state
+   definitions and optimization policies.
 
 3.  Security Considerations
 
