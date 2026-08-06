@@ -675,6 +675,33 @@ layers.
 ### Requirements for GREEN WG
 - Mechanisms to coordinate energy-saving decisions across multiple layers(e.g., coordination between IP layer and Transport layer).
 
+## AI Agents for Energy Efficiency Management
+
+### Use Case Description
+
+AI agents can be deployed at different levels of the management architecture, for example within network controllers, to implement energy-saving actions across network devices. By adding AI capabilities to the management architecture, operators can achieve more sophisticated and automated energy optimization.
+
+An AI agent continuously monitors energy consumption patterns in conjunction with operations data to identify optimization opportunities. Based on this analysis, the AI agent can implement coordinated energy-saving actions while maintaining required service levels. Over time, AI agents learn from operational data to improve energy optimization requested.
+
+This approach builds upon incremental deployment capabilities where energy efficiency measures are gradually implemented. It provides the agent with the knowledge to optimize decisions based on wider data rather than relying on individual device capabilities.
+
+### GREEN WG Charter Specifics
+
+The AI agent can coordinate energy-saving actions across multiple devices while optimizing service quality and energy efficiency.
+AI agents may operate at different levels within the management architecture rather than requiring changes to individual network devices.
+
+### The Need for Energy Efficiency
+
+Adding AI capabilities to the network management architecture offers significant potential for improving energy efficiency. An AI agent can have visibility across the entire network, allowing it to make optimization decisions based on data patterns. It can analyze energy consumption patterns in conjunction with traffic loads and network performance to identify the most effective energy-saving operation.
+
+An AI agent can implement coordinated energy-saving actions across multiple devices while maintaining required service levels. It can adapt to changing network conditions and traffic patterns. It learns from operational experience to improve its operations over time.
+
+This approach supports the incremental deployment of energy-efficient practices across the network.  The AI agent can make more sophisticated decisions based on network-wide data rather than relying solely on individual device capabilities.
+
+### Requirements for GREEN WG
+
+The implementation of this use case relies on energy management capabilities. The AI agent should utilize standardized interfaces for consistent energy management across different devices. Energy optimization decisions should respect established power state definitions and optimization policies.
+
 # Security Considerations
 
 Energy efficiency management comes with numerous security considerations :
