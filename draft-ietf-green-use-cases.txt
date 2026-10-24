@@ -5,8 +5,9 @@
 Getting Ready for Energy-Efficient Networking                 E. Stephan
 Internet-Draft                                                    Orange
 Intended status: Informational                                M. Palmero
-Expires: 7 February 2027                                      Individual
+Expires: 27 April 2027                                        Individual
                                                                B. Claise
+                                                          Everything OPS
                                                                    Q. Wu
                                                                   Huawei
                                                          L. M. Contreras
@@ -15,7 +16,7 @@ Expires: 7 February 2027                                      Individual
                                         Universidad Carlos III de Madrid
                                                                  X. Chen
                                                             China Mobile
-                                                           6 August 2026
+                                                         24 October 2026
 
 
                Use Cases for Energy Efficiency Management
@@ -65,7 +66,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 February 2027.
+   This Internet-Draft will expire on 27 April 2027.
 
 Copyright Notice
 
@@ -1577,9 +1578,16 @@ Table of Contents
    [ONF-MW]   "ONF TR-532, Microwave Information Model, version 2.0.",
               31 January 2024.
 
-   [RFC8432]  "*** BROKEN REFERENCE ***".
+   [RFC8432]  Ahlberg, J., Ed., Ye, M., Ed., Li, X., Contreras, LM., and
+              CJ. Bernardos, "A Framework for Management and Control of
+              Microwave and Millimeter Wave Interface Parameters",
+              RFC 8432, DOI 10.17487/RFC8432, October 2018,
+              <https://www.rfc-editor.org/rfc/rfc8432>.
 
-   [RFC8561]  "*** BROKEN REFERENCE ***".
+   [RFC8561]  Ahlberg, J., Ye, M., Li, X., Spreafico, D., and M.
+              Vaupotic, "A YANG Data Model for Microwave Radio Link",
+              RFC 8561, DOI 10.17487/RFC8561, June 2019,
+              <https://www.rfc-editor.org/rfc/rfc8561>.
 
    [RFC9543]  Farrel, A., Ed., Drake, J., Ed., Rokui, R., Homma, S.,
               Makhijani, K., Contreras, L., and J. Tantsura, "A
@@ -1607,8 +1615,8 @@ Authors' Addresses
 
 
    Benoit Claise
-   Huawei
-   Email: benoit.claise@huawei.com
+   Everything OPS
+   Email: benoit@everthing-ops.net
 
 
    Qin Wu
