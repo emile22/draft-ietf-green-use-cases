@@ -34,8 +34,8 @@ author:
     email: marisol.ietf@gmail.com
   -
     fullname: Benoit Claise
-    org: Huawei
-    email: benoit.claise@huawei.com
+    org: Everything OPS
+    email: benoit@everthing-ops.net
   -
     fullname: Qin Wu
     org: Huawei
